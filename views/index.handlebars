@@ -1,0 +1,41 @@
+<h1 class="text-center justify-content-center">Eat-Da-Burger</h1>
+
+  <div class="container text-center justify-content-center">
+    <div class="row">
+      <div class="col-6">
+        <h5>Burgers Available</h5>
+        <ul class="list-group">
+        {{#each burgers}}
+          {{#unless this.devoured}}
+            <div class="list-group-item eatBurger">{{this.burger_name}} <button id="{{this.id}}" class="btn btn-sm btn-danger float-right eatBurger">Eat</button></div>
+          {{/unless}}
+        {{/each}}
+        </ul>
+      </div>
+
+      <div class="col-6">
+        <h5>Burgers Eaten</h5>
+        <ul class="list-group">
+        {{#each burgers}}
+          {{#if this.devoured}}
+           <div class="burgerEaten">{{this.burger_name}}</div>
+          {{/if}}
+        {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<h2 class="text-center justify-content-center mt-5">Add your own Burger!</h2>
+
+<div class="row text-center justify-content-center mb-5">
+  <div class="col-12 justify-content-center text-cemter">
+    <form class="create-form justify-content-center text-cemter">
+    <div class="mb-2 justify-content-center text-cemter ml-5 mr-5">
+        <input type="text" class="form-control w-50 justify-content-center text-cemter" id="burger_name" name="burger_name" placeholder="Enter your burger name">
+    </div>
+    <button type="submit" class="btn btn-dark btn-lg addBurger mt-2 mb-5">Add a Burger</button>
+    </form>
+    
+  </div>
+</div>
